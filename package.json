@@ -1,0 +1,17 @@
+{
+  "name": "ejercicios-typescript-1-30",
+  "version": "1.0.0",
+  "description": "Ejercicios 1 al 30 de TypeScript",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}
