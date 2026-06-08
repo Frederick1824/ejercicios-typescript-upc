@@ -16,6 +16,10 @@ async function pedirNumero(mensaje: string): Promise<number> {
   return valor;
 }
 
+// ==========================================
+// BLOQUE DE EJERCICIOS (1 al 30)
+// ==========================================
+
 function ejercicio1(): void {
   const nombre = "Fede";
   console.log(`Hola, ${nombre}`);
@@ -124,7 +128,6 @@ function ejercicio21(): void {
 }
 
 function ejercicio22(): void {
-  // Conversión de metros a millas.
   const metros = 3000;
   const metrosPorMilla = 1609;
   const millas = metros / metrosPorMilla;
@@ -164,14 +167,12 @@ async function ejercicio26(): Promise<void> {
 }
 
 async function ejercicio27(): Promise<void> {
-  // Objetivo: calcular el producto de dos números introducidos por el usuario.
   const n1 = await pedirNumero("Ingrese el primer número: ");
   const n2 = await pedirNumero("Ingrese el segundo número: ");
   console.log(`Producto: ${n1 * n2}`);
 }
 
 async function ejercicio28(): Promise<void> {
-  // Autor: Federico Montoro - Fecha: 28/04/2026
   const n1 = await pedirNumero("Ingrese el primer número: ");
   const n2 = await pedirNumero("Ingrese el segundo número: ");
 
@@ -201,6 +202,10 @@ async function ejercicio30(): Promise<void> {
     console.log(`${numero} x ${i} = ${numero * i}`);
   }
 }
+
+// ==========================================
+// CONTROLADOR DEL ENRUTAMIENTO (SWITCH)
+// ==========================================
 
 async function ejecutarEjercicio(numero: number): Promise<void> {
   switch (numero) {
@@ -234,12 +239,35 @@ async function ejecutarEjercicio(numero: number): Promise<void> {
     case 28: await ejercicio28(); break;
     case 29: await ejercicio29(); break;
     case 30: await ejercicio30(); break;
-    default: console.log("Elegí un ejercicio del 1 al 30, animal de la compu.");
+    case 50: await ejercicio50(); break;
+    case 51: await ejercicio51(); break;
+    case 55: await ejercicio55(); break;
+    case 56: await ejercicio56(); break;
+    case 57: await ejercicio57(); break;
+    case 58: await ejercicio58(); break;
+    case 59: await ejercicio59(); break;
+    case 60: await ejercicio60(); break;
+    case 61: await ejercicio61(); break;
+    case 62: await ejercicio62(); break;
+    case 63: await ejercicio63(); break;
+    case 64: await ejercicio64(); break;
+    case 65: await ejercicio65(); break;
+    case 66: await ejercicio66(); break;
+    case 67: await ejercicio67(); break;
+    case 68: await ejercicio68(); break;
+    case 69: await ejercicio69(); break;
+    case 70: await ejercicio70(); break;
+    default:
+      console.log("Elegí un ejercicio válido: 1 al 30 o 50 al 70.");
   }
 }
 
+// ==========================================
+// FUNCIÓN PRINCIPAL (MAIN)
+// ==========================================
+
 async function main(): Promise<void> {
-  console.log("=== Ejercicios TypeScript 1 al 30 ===");
+  console.log("=== Ejercicios TypeScript 1 al 30 y 50 al 70 ===");
   console.log("Escribí 0 para salir.\n");
 
   let continuar = true;
@@ -258,4 +286,242 @@ async function main(): Promise<void> {
   rl.close();
 }
 
+// ==========================================
+// BLOQUE DE EJERCICIOS (50 al 70)
+// ==========================================
+
+async function ejercicio50(): Promise<void> {
+  const a = await pedirNumero("Número 1: ");
+  const b = await pedirNumero("Número 2: ");
+
+  if (a === b) {
+    console.log("Son iguales");
+  } else if (a > b) {
+    console.log(`${a} es mayor`);
+  } else {
+    console.log(`${b} es mayor`);
+  }
+}
+
+async function ejercicio51(): Promise<void> {
+  const x = await pedirNumero("Número: ");
+
+  if (5 === x) {
+    console.log("El número es 5");
+  } else {
+    console.log("El número no es 5");
+  }
+}
+
+async function ejercicio55(): Promise<void> {
+  const n = await pedirNumero("Número: ");
+  console.log(`Valor absoluto: ${n >= 0 ? n : -n}`);
+}
+
+async function ejercicio56(): Promise<void> {
+  const a = await pedirNumero("Número 1: ");
+  const b = await pedirNumero("Número 2: ");
+
+  console.log(`El menor es: ${a < b ? a : b}`);
+}
+
+async function ejercicio57(): Promise<void> {
+  const n = await pedirNumero("Número del 1 al 5: ");
+
+  switch (n) {
+    case 1: console.log("uno"); break;
+    case 2: console.log("dos"); break;
+    case 3: console.log("tres"); break;
+    case 4: console.log("cuatro"); break;
+    case 5: console.log("cinco"); break;
+    default: console.log("Número inválido");
+  }
+}
+
+async function ejercicio58(): Promise<void> {
+  const simbolo = (await pedirTexto("Ingrese un carácter: "))[0];
+
+  switch (simbolo) {
+    case ".":
+    case ",":
+    case ";":
+    case ":":
+      console.log("Es un signo de puntuación");
+      break;
+    default:
+      if (simbolo >= "0" && simbolo <= "9") {
+        console.log("Es una cifra numérica");
+      } else {
+        console.log("Es otro carácter");
+      }
+  }
+}
+
+async function ejercicio59(): Promise<void> {
+  const letra = (await pedirTexto("Ingrese una letra: ")).toLowerCase()[0];
+
+  switch (letra) {
+    case "a":
+    case "e":
+    case "i":
+    case "o":
+    case "u":
+      console.log("Es una vocal");
+      break;
+    default:
+      if (letra >= "0" && letra <= "9") {
+        console.log("Es una cifra numérica");
+      } else {
+        console.log("Es una consonante");
+      }
+  }
+}
+
+async function ejercicio60(): Promise<void> {
+  const n = await pedirNumero("Número del 1 al 5: ");
+
+  if (n === 1) console.log("uno");
+  else if (n === 2) console.log("dos");
+  else if (n === 3) console.log("tres");
+  else if (n === 4) console.log("cuatro");
+  else if (n === 5) console.log("cinco");
+  else console.log("Número inválido");
+}
+
+async function ejercicio61(): Promise<void> {
+  const simbolo = (await pedirTexto("Ingrese un carácter: "))[0];
+
+  if (simbolo === "." || simbolo === "," || simbolo === ";" || simbolo === ":") {
+    console.log("Es un signo de puntuación");
+  } else if (simbolo >= "0" && simbolo <= "9") {
+    console.log("Es una cifra numérica");
+  } else {
+    console.log("Es otro carácter");
+  }
+}
+
+async function ejercicio62(): Promise<void> {
+  const letra = (await pedirTexto("Ingrese una letra: ")).toLowerCase()[0];
+
+  if ("aeiou".includes(letra)) {
+    console.log("Es una vocal");
+  } else if (letra >= "0" && letra <= "9") {
+    console.log("Es una cifra numérica");
+  } else {
+    console.log("Es una consonante");
+  }
+}
+
+async function ejercicio63(): Promise<void> {
+  let password = 0;
+
+  while (password !== 1111) {
+    password = await pedirNumero("Ingrese contraseña: ");
+  }
+
+  console.log("Contraseña correcta");
+}
+
+async function ejercicio64(): Promise<void> {
+  let n = await pedirNumero("Número: ");
+
+  while (n !== 0) {
+    console.log(`Su cuadrado es ${n * n}`);
+    n = await pedirNumero("Número: ");
+  }
+}
+
+async function ejercicio65(): Promise<void> {
+  let seguir = "s";
+
+  while (seguir === "s") {
+    const a = await pedirNumero("Primer número: ");
+    const b = await pedirNumero("Segundo número: ");
+
+    if (b !== 0 && a % b === 0) {
+      console.log(`${a} es múltiplo de ${b}`);
+    } else {
+      console.log(`${a} no es múltiplo de ${b}`);
+    }
+
+    seguir = (await pedirTexto("¿Continuar? s/n: ")).toLowerCase();
+  }
+}
+
+async function ejercicio66(): Promise<void> {
+  let seguir = "s";
+
+  while (seguir === "s") {
+    const a = await pedirNumero("Primer número: ");
+    const b = await pedirNumero("Segundo número: ");
+
+    if (b !== 0 && a % b === 0) {
+      console.log(`${a} es múltiplo de ${b}`);
+    } else if (a !== 0 && b % a === 0) {
+      console.log(`${b} es múltiplo de ${a}`);
+    } else {
+      console.log("Ninguno es múltiplo del otro");
+    }
+
+    seguir = (await pedirTexto("¿Continuar? s/n: ")).toLowerCase();
+  }
+}
+
+async function ejercicio67(): Promise<void> {
+  let i = 1;
+
+  while (i <= 10) {
+    console.log(i);
+    i++;
+  }
+}
+
+async function ejercicio68(): Promise<void> {
+  let i = 26;
+
+  while (i >= 10) {
+    console.log(i);
+    i -= 2;
+  }
+}
+
+async function ejercicio69(): Promise<void> {
+  let n = await pedirNumero("Número entero positivo: ");
+  let cifras = 0;
+
+  if (n === 0) {
+    cifras = 1;
+  } else {
+    while (n > 0) {
+      n = Math.floor(n / 10);
+      cifras++;
+    }
+  }
+
+  console.log(`Tiene ${cifras} cifras`);
+}
+
+async function ejercicio70(): Promise<void> {
+  const secreto = 7;
+  let intentos = 0;
+  let adivino = false;
+
+  while (intentos < 3 && !adivino) {
+    const n = await pedirNumero("Adivine un número del 1 al 10: ");
+    intentos++;
+
+    if (n === secreto) {
+      adivino = true;
+      console.log("¡Correcto!");
+    } else {
+      console.log("Incorrecto");
+    }
+  }
+
+  if (!adivino) {
+    console.log(`Perdiste. El número era ${secreto}`);
+  }
+}
+
+// Ejecución inicial de la app
 main();
